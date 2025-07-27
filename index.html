@@ -79,19 +79,68 @@
 </section>
 
 <section id="skills">
-  <h2>Skills & Zertifikate</h2>
-  <ul class="skills">
-    <li>SQL Server 2008 Database (ICT, Feb 2013)</li>
-    <li>Transact-SQL Queries (Microsoft IT Academy)</li>
-    <li>Windows Active Directory & Exchange Server 2010 (IriSoft, 2013)</li>
-    <li>Microsoft Office: Word, Excel, PowerPoint (Certified by Wisdom)</li>
-    <li>Publisher, Photoshop, Access (Certified by Wisdom)</li>
-    <li>Unified Modeling Language (UML)</li>
-    <li>Object Oriented Programming (OOP)</li>
-    <li>Programmierkenntnisse: Python (laufender Kurs), C++, HTML, CSS, JavaScript</li>
-    <li>CMS: Joomla, WordPress</li>
-    <li>Versionsverwaltung mit Git & GitHub</li>
-  </ul>
+  <h2>Meine Kompetenzen</h2>
+  
+  <div class="tabs">
+    <button class="tab-btn active" onclick="showTab('skills')">Skills</button>
+    <button class="tab-btn" onclick="showTab('courses')">Weiterbildung</button>
+  </div>
+
+  <div id="skills-tab" class="tab-content">
+    <ul>
+      <li>SQL Server 2008 Database (ICT, 2013)</li>
+      <li>Transact-SQL (Microsoft Academy)</li>
+      <li>Windows Active Directory & Exchange</li>
+      <li>MS Office, Photoshop, Access</li>
+      <li>UML, OOP, Git, GitHub</li>
+      <li>C++, HTML, CSS, JS, Joomla, WordPress</li>
+    </ul>
+  </div>
+
+  <div id="courses-tab" class="tab-content" style="display: none;">
+    <p>📘 Aktuell mache ich einen Kurs in Python.</p>
+    <p>🤖 Ab September beginne ich eine Weiterbildung zur <strong>KI-Managerin</strong>.</p>
+  </div>
+</section>
+
+<style>
+  .tabs {
+    margin-bottom: 10px;
+  }
+  .tab-btn {
+    background: #ccc;
+    border: none;
+    padding: 10px 15px;
+    cursor: pointer;
+  }
+  .tab-btn.active {
+    background: #4b6584;
+    color: white;
+  }
+  .tab-content {
+    background: white;
+    padding: 15px;
+    border-left: 5px solid #4b6584;
+  }
+</style>
+
+<script>
+  function showTab(tab) {
+    document.getElementById('skills-tab').style.display = 'none';
+    document.getElementById('courses-tab').style.display = 'none';
+
+    document.querySelectorAll('.tab-btn').forEach(btn => btn.classList.remove('active'));
+
+    if (tab === 'skills') {
+      document.getElementById('skills-tab').style.display = 'block';
+      event.target.classList.add('active');
+    } else {
+      document.getElementById('courses-tab').style.display = 'block';
+      event.target.classList.add('active');
+    }
+  }
+</script>
+
 </section>
 
 <section id="projects">
@@ -122,47 +171,6 @@
   <p>📍 München<br />
      📧 <a href="mailto:xhoirama@gmail.com">xhoirama@gmail.com</a><br />
      📞 0170-8466774</p>
-
-  <section id="contact">
-  <h2>Kontakt</h2>
-  <form action="https://formspree.io/f/YOUR_ID_HERE" method="POST">
-    <label>Name:<br>
-      <input type="text" name="name" required>
-    </label><br><br>
-    
-    <label>E-Mail:<br>
-      <input type="email" name="email" required>
-    </label><br><br>
-
-    <label>Nachricht:<br>
-      <textarea name="message" rows="5" required></textarea>
-    </label><br><br>
-
-    <button type="submit">Senden</button>
-  </form>
-</section>
-
-<style>
-  form input, form textarea {
-    width: 100%;
-    padding: 8px;
-    margin-bottom: 12px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-  }
-
-  form button {
-    background-color: #4b6584;
-    color: white;
-    padding: 10px 20px;
-    border: none;
-    cursor: pointer;
-  }
-
-  form button:hover {
-    background-color: #3c4e64;
-  }
-</style>
 
 </section>
 
